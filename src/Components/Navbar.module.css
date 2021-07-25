@@ -1,0 +1,23 @@
+.navbarGrid{
+    display: flex;
+    flex-direction: row ;
+    gap: 3vw;
+    border: 2px solid black;
+    font-size: 2vw;
+    text-decoration: none;
+    padding: 1vw;
+   justify-content: center;
+  text-align: center;
+  
+   margin: auto;
+    
+   
+}
+
+.navlinkClass{
+    text-decoration: none;
+    color: black;
+}
+.navlinkClass:hover{
+    color: blue;
+}
