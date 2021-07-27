@@ -1,4 +1,4 @@
-import { Box } from '@material-ui/core';
+import { Box,Button } from '@material-ui/core';
 import React from 'react';
 import styles from "./Home.module.css";
 import { makeStyles} from '@material-ui/core/styles';
@@ -7,6 +7,8 @@ import EmailIcon from '@material-ui/icons/Email';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
+import SystemUpdateAltIcon from '@material-ui/icons/SystemUpdateAlt';
+
 
 const useStyles = makeStyles({
     techBox: {
@@ -36,11 +38,24 @@ const useStyles = makeStyles({
         marginBottom:"5vh",
         marginTop:"3vh",
         backgroundColor:"rgb(250, 249, 249)"
+    },
+    resumeButton:{
+        height:"5vh",
+        marginTop:"0.5vh",
+        fontSize:"1.7vw",
+        fontWeight:"bolder"
+       
     }
   });
 
 const Home = () => {
     const classes = useStyles();
+    const onDownload = () => {
+        const link = document.createElement("a");
+        link.download = `AmolTalekarResume.pdf`;
+        link.href = "AmolTalekarResume.pdf";
+        link.click();
+      };
     return (
         <Box boxShadow={3} >
            
@@ -51,8 +66,8 @@ const Home = () => {
                 </div>
                
                <div>
-                <h1>Hi there, I am <span style={{fontWeight:"bolder",fontStyle:"italic"}}>Amol Talekar</span> , it is very nice to meet you!</h1>
-                <h2>I am a Passionate aspiring Full Stack Developer skilled in MERN stack, moulded and shaped by Masai school’s intensive and immersive learning.  Look forward to joining a company where I will  be able to contribute towards individual and company growth.</h2>
+                <h1 className={styles.abouth2Class}>Hi there, I am <span style={{fontWeight:"bolder",fontStyle:"italic"}}>Amol Talekar</span> , it is very nice to meet you!</h1>
+                <h2 className={styles.abouth2Class}>I am a Passionate aspiring Full Stack Developer skilled in MERN stack, moulded and shaped by Masai school’s intensive and immersive learning.  Look forward to joining a company where I will  be able to contribute towards individual and company growth.</h2>
            
                </div>
             </div>
@@ -121,20 +136,20 @@ const Home = () => {
             <Box id="projects" className={classes.projectBox} boxShadow={3}>
                 <h1>My Projects</h1>
                 <Box className={classes.individualProjectBox} boxShadow={3}>
-                    <Link className={styles.externalLinksClass} onClick={()=>window.open("https://github.com/Amol-Talekar/travelocity","_blank")} >travelocity.com</Link>
+                    <Link to="/#" className={styles.externalLinksClass} onClick={()=>window.open("https://github.com/Amol-Talekar/travelocity","_blank")} >travelocity.com</Link>
                     <img className={styles.projectImgClass} alt="travelocity" src="/travelocitylogo.png" />
                     <p className={styles.projectParaClass}>Cloning travelocity.com, a website that caters to all travel needs using HTML, CSS3 and Advanced JavaScript</p>
                 </Box>
                 
                 <Box className={classes.individualProjectBox} boxShadow={3}> 
-                <Link className={styles.externalLinksClass} onClick={()=>window.open("https://github.com/Amol-Talekar/unbounce","_blank")} >unbounce.com</Link>
+                <Link to="/#" className={styles.externalLinksClass} onClick={()=>window.open("https://github.com/Amol-Talekar/unbounce","_blank")} >unbounce.com</Link>
                     <img className={styles.projectImgClass} alt="unbounce" src="/unbouncelogo.png" />
                     <p className={styles.projectParaClass}>Cloning unbounce.com, a website that specializes in creating custom landing pages using HTML, CSS3 and JavaScript</p>
                 </Box>
 
                 <Box className={classes.individualProjectBox} boxShadow={3}>                   
-                <Link className={styles.externalLinksClass} onClick={()=>window.open("https://github.com/shubham007kumar/Makemytrip","_blank")} >makemytrip.com</Link>
-                    <img className={styles.projectImgClass} alt="makemytrip" src="/makemytriplogo.png" />
+                <Link to="/#" className={styles.externalLinksClass} onClick={()=>window.open("https://github.com/shubham007kumar/Makemytrip","_blank")} >makemytrip.com</Link>
+                    <img className={styles.projectImgClass} alt="makemytrip" src="/makemytriplogo1.png" />
                     <p className={styles.projectParaClass}>Cloning makemytrip.com, a website that provides all services while planning a trip using React, Redux, mongoDB, Material UI, HTML, CSS3 and JavaScript</p>
                 </Box>
 
@@ -143,7 +158,7 @@ const Home = () => {
             
             
             <Box boxShadow={4} className={classes.contactBox} id="contact" >
-                <h1 style={{textAlign:"left",margin:"0.2vw",padding:"0.2vw"}}>Drop me an email or call me. I would love to have a chat with you!</h1>
+                <h1 className={styles.contactDropH1Class}>Drop me an email or call me. I would love to have a chat with you!</h1>
                 <div className={styles.contactSingleDiv}>
                     <PhoneAndroidIcon fontSize="large"/>
                     <span className={styles.contactClass}>9028608781</span>
@@ -154,12 +169,26 @@ const Home = () => {
                 </div>
                 <div className={styles.contactSingleDiv}>
                     <LinkedInIcon fontSize="large"/>
-                    <Link className={styles.contactClass} onClick={()=>window.open("https://www.linkedin.com/in/amol-talekar-089210207/","_blank")} >https://www.linkedin.com/in/amol-talekar-089210207/</Link>
+                    <Link to="/#" className={styles.contactClass} onClick={()=>window.open("https://www.linkedin.com/in/amol-talekar-089210207/","_blank")} >https://www.linkedin.com/in/amol-talekar-089210207/</Link>
 
                 </div>
                 <div className={styles.contactSingleDiv}>
                     <GitHubIcon fontSize="large"/>
-                    <Link className={styles.contactClass} onClick={()=>window.open("https://github.com/Amol-Talekar","_blank")} >https://github.com/Amol-Talekar</Link>
+                    <Link to="/#" className={styles.contactClass} onClick={()=>window.open("https://github.com/Amol-Talekar","_blank")} >https://github.com/Amol-Talekar</Link>
+
+                </div>
+
+                <div className={styles.resumeDivClass}>
+                    <img className={styles.resumeImgClass} alt="Resume" src="/resumelogo.png" />
+                    <Button
+                        onClick={onDownload}
+                        variant="contained"
+                        color="default"
+                        className={classes.resumeButton}
+                        endIcon={<SystemUpdateAltIcon/>}
+                        >
+                        Click here to download my Resume
+                       </Button>
 
                 </div>
             </Box>
